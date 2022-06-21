@@ -24,7 +24,7 @@
 		<hibernate.version>5.4.29.Final</hibernate.version>
 		<hibernate.jpa_2_1_api.version>1.0.2.Final</hibernate.jpa_2_1_api.version>
 		<jersey.version>2.29</jersey.version>
-		<mysql.version>8.0.16</mysql.version>
+		<mysql.version>8.0.28</mysql.version>
 		<postgres.version>42.2.19</postgres.version>
 		<h2.version>1.4.200</h2.version>
 		<sqlserver.version>9.2.1.jre8</sqlserver.version>
