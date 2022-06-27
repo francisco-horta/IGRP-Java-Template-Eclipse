@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="/IGRP-Template/images/IGRP/IGRP2.3/app/gestao_de_recursos_humanos/dashboard/Dashboard.xsl" type="text/xsl"?>
+<rows>
+    <link_img>/IGRP-Template/images/IGRP/IGRP2.3</link_img>
+    <title>Dummie XML prototype</title>
+    <site>
+        <welcome_note>Oba</welcome_note>
+        <footer_note>2019 - Copyright NOSI v.190711</footer_note>
+        <user_name>Hexagon</user_name>
+        <button type="specific">
+            <title>Sair</title>
+            <app>DUA</app>
+            <page />
+            <link>#</link>
+            <target>_self</target>
+            <img>exit.png</img>
+        </button>
+    </site>
+    <page>Dashboard</page>
+    <app>gestao_de_recursos_humanos</app>
+    <plsql>
+        <action>index</action>
+        <package_instance></package_instance>
+        <package_db>nosi.webapps.gestao_de_recursos_humanos.pages</package_db>
+        <package_html>Dashboard</package_html>
+        <table_name></table_name>
+        <with_replace>false</with_replace>
+        <with_label>false</with_label>
+        <with_biztalk>false</with_biztalk>
+        <dynamic_menu>false</dynamic_menu>
+        <copy_menu>false</copy_menu>
+        <package_copy_db />
+        <package_copy_html />
+        <preserve_url>webapps?r=igrp/page/preserveUrl&amp;p_id=87</preserve_url>
+    </plsql>
+    <slide-menu file="../images/IGRP/IGRP2.3/xml/IGRP-slide-menu.xml?v=2" />
+    <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
+    <content>
+        <title>Dashboard</title>
+        <chart_1 type="chart" xml-type="chart" title="Funcionários Por Departamentos" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>pie</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>575</col>
+                    <col>441</col>
+                    <col>377</col>
+                    <col>225</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>23</col>
+                    <col>397</col>
+                    <col>64</col>
+                    <col>39</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>730</col>
+                    <col>772</col>
+                    <col>47</col>
+                </row>
+            </value>
+            <colors>
+                <col>#1340e3</col>
+                <col>#1ec844</col>
+                <col>#18b8aa</col>
+                <col>#2fb49e</col>
+            </colors>
+        </chart_1>
+        <statbox_1 type="statbox" xml-type="form" gen-type="container" gen-group="">
+            <fields>
+                <statbox_1_title name="p_statbox_1_title" type="text" maxlength="4000">
+                    <label>Box Title</label>
+                    <value>Total de Funcionários</value>
+                </statbox_1_title>
+                <statbox_1_val name="p_statbox_1_val" type="text" maxlength="4000">
+                    <label>Value</label>
+                    <value>776</value>
+                </statbox_1_val>
+                <statbox_1_txt name="p_statbox_1_txt" type="text" maxlength="4000">
+                    <label>Url Text</label>
+                    <value>Ver Funcionários</value>
+                </statbox_1_txt>
+                <statbox_1_url name="p_statbox_1_url" type="text" maxlength="4000">
+                    <label>Url</label>
+                    <value>http://www.example.com</value>
+                </statbox_1_url>
+                <statbox_1_bg name="p_statbox_1_bg" type="text" maxlength="4000">
+                    <label>Background</label>
+                    <value>cp-fresh</value>
+                </statbox_1_bg>
+                <statbox_1_icn name="p_statbox_1_icn" type="text" maxlength="4000" persist="true">
+                    <label>Icon</label>
+                    <value>fa-check</value>
+                </statbox_1_icn>
+            </fields>
+        </statbox_1>
+        <chart_2 type="chart" xml-type="chart" title="Funcionários por Função" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>column</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>499</col>
+                    <col>665</col>
+                    <col>378</col>
+                    <col>259</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>985</col>
+                    <col>79</col>
+                    <col>125</col>
+                    <col>965</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>677</col>
+                    <col>189</col>
+                    <col>781</col>
+                </row>
+            </value>
+            <colors>
+                <col>#df8b59</col>
+                <col>#e425f9</col>
+                <col>#44d8eb</col>
+                <col>#155333</col>
+            </colors>
+        </chart_2>
+    </content>
+    <blockly>
+        <imports>
+            <import type="statbox">statbox_1</import>
+            <import type="dao">TEmployees</import>
+        </imports>
+        <xml>
+            <block type="controller" id="controller" x="88" y="38">
+                <statement name="index">
+                    <block type="sttbox_statbox_1" id="VcrByM0u[rT-+;wACM@@" inline="true">
+                        <mutation order="null" operation="null" limit="null" collectors="null" crud="null" statistdrop="get_counting" ajax="null" count="NaN"></mutation>
+                        <field name="dao">TEmployees</field>
+                        <field name="statistDrop">get_counting</field>
+                        <statement name="value2">
+                            <block type="statfields_String::statbox_1_url" id="U!9V(xQ)^!N-iqAVGRnF">
+                                <value name="fields_model">
+                                    <block type="core_fn_link" id="!*iqr9]V.[^X3Xa.f7Br" inline="true">
+                                        <mutation count="NaN"></mutation>
+                                        <field name="value2">gestao_de_recursos_humanos</field>
+                                        <field name="value3">Lista_de_empregados</field>
+                                        <field name="value4">index</field>
+                                    </block>
+                                </value>
+                                <next>
+                                    <block type="statfields_String::statbox_1_val" id="C-,:rJn+fF4nm%ENqx6P">
+                                        <field name="collectors">value</field>
+                                    </block>
+                                </next>
+                            </block>
+                        </statement>
+                    </block>
+                </statement>
+            </block>
+        </xml>
+    </blockly>
+</rows>
