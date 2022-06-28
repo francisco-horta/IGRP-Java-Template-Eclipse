@@ -14,8 +14,8 @@ public class DashboardView extends View {
 	public Field statbox_1_url;
 	public Field statbox_1_bg;
 	public Field statbox_1_icn;
-	public IGRPChart chart_1;
 	public IGRPStatBox statbox_1;
+	public IGRPChart chart_1;
 	public IGRPChart chart_2;
 
 
@@ -23,9 +23,9 @@ public class DashboardView extends View {
 
 		this.setPageTitle("Dashboard");
 			
-		chart_1 = new IGRPChart("chart_1","Funcionários Por Departamentos");
-
 		statbox_1 = new IGRPStatBox("statbox_1","");
+
+		chart_1 = new IGRPChart("chart_1","Funcionários Por Departamentos");
 
 		chart_2 = new IGRPChart("chart_2","Funcionários por Função");
 
@@ -51,7 +51,7 @@ public class DashboardView extends View {
 		
 		statbox_1_icn = new TextField(model,"statbox_1_icn");
 		statbox_1_icn.setLabel(gt("Icon"));
-		statbox_1_icn.setValue(gt("fa-check"));
+		statbox_1_icn.setValue(gt("fa-users"));
 		statbox_1_icn.propertie().add("name","p_statbox_1_icn").add("type","text").add("maxlength","4000");
 		
 
@@ -62,21 +62,20 @@ public class DashboardView extends View {
 		chart_1.setXaxys("Eixo de X");
 		chart_1.setYaxys("Eixo de Y");
 		chart_1.setUrl("#");
-		//ex: chart_1.addColor("#261e19").addColor("#0f9d31").addColor("#ae1ca8").addColor("#d69ef9");
+		//ex: chart_1.addColor("#523f35").addColor("#ec88cf").addColor("#d7e74b").addColor("#57a0eb");
 
 		chart_2.setCaption("");
 		chart_2.setChart_type("column");
 		chart_2.setXaxys("Eixo de X");
 		chart_2.setYaxys("Eixo de Y");
 		chart_2.setUrl("#");
-		//ex: chart_2.addColor("#ad23d9").addColor("#f32c20").addColor("#acd6a7").addColor("#7f25c0");
+		//ex: chart_2.addColor("#0492d5").addColor("#8032b3").addColor("#445b4e").addColor("#ecddd8");
 
 	}
 		
 	@Override
 	public void render(){
 		
-
 		statbox_1.addField(statbox_1_title);
 		statbox_1.addField(statbox_1_val);
 		statbox_1.addField(statbox_1_txt);
@@ -85,8 +84,9 @@ public class DashboardView extends View {
 		statbox_1.addField(statbox_1_icn);
 
 
-		this.addToPage(chart_1);
+
 		this.addToPage(statbox_1);
+		this.addToPage(chart_1);
 		this.addToPage(chart_2);
 	}
 		

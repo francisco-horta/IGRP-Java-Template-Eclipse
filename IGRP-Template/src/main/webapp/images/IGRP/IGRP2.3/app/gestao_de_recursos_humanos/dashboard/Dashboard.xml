@@ -37,49 +37,6 @@
     <top_menu file="../images/IGRP/IGRP2.3/xml/IGRP-top_menu.xml?v=2" />
     <content>
         <title>Dashboard</title>
-        <chart_1 type="chart" xml-type="chart" title="Funcionários Por Departamentos" gen-type="container" gen-group="">
-            <caption/>
-            <chart_type>pie</chart_type>
-            <xaxys>Eixo de X</xaxys>
-            <yaxys>Eixo de Y</yaxys>
-            <url>#</url>
-            <label>
-                <col>Ano</col>
-                <col>X1</col>
-                <col>X2</col>
-                <col>X3</col>
-                <col>X4</col>
-            </label>
-            <value>
-                <row>
-                    <col>2010</col>
-                    <col>575</col>
-                    <col>441</col>
-                    <col>377</col>
-                    <col>225</col>
-                </row>
-                <row>
-                    <col>2009</col>
-                    <col>23</col>
-                    <col>397</col>
-                    <col>64</col>
-                    <col>39</col>
-                </row>
-                <row>
-                    <col>2015</col>
-                    <col>1010</col>
-                    <col>730</col>
-                    <col>772</col>
-                    <col>47</col>
-                </row>
-            </value>
-            <colors>
-                <col>#1340e3</col>
-                <col>#1ec844</col>
-                <col>#18b8aa</col>
-                <col>#2fb49e</col>
-            </colors>
-        </chart_1>
         <statbox_1 type="statbox" xml-type="form" gen-type="container" gen-group="">
             <fields>
                 <statbox_1_title name="p_statbox_1_title" type="text" maxlength="4000">
@@ -104,10 +61,53 @@
                 </statbox_1_bg>
                 <statbox_1_icn name="p_statbox_1_icn" type="text" maxlength="4000" persist="true">
                     <label>Icon</label>
-                    <value>fa-check</value>
+                    <value>fa-users</value>
                 </statbox_1_icn>
             </fields>
         </statbox_1>
+        <chart_1 type="chart" xml-type="chart" title="Funcionários Por Departamentos" gen-type="container" gen-group="">
+            <caption/>
+            <chart_type>pie</chart_type>
+            <xaxys>Eixo de X</xaxys>
+            <yaxys>Eixo de Y</yaxys>
+            <url>#</url>
+            <label>
+                <col>Ano</col>
+                <col>X1</col>
+                <col>X2</col>
+                <col>X3</col>
+                <col>X4</col>
+            </label>
+            <value>
+                <row>
+                    <col>2010</col>
+                    <col>159</col>
+                    <col>594</col>
+                    <col>863</col>
+                    <col>697</col>
+                </row>
+                <row>
+                    <col>2009</col>
+                    <col>483</col>
+                    <col>59</col>
+                    <col>794</col>
+                    <col>735</col>
+                </row>
+                <row>
+                    <col>2015</col>
+                    <col>1010</col>
+                    <col>45</col>
+                    <col>652</col>
+                    <col>154</col>
+                </row>
+            </value>
+            <colors>
+                <col>#373fa6</col>
+                <col>#c83e2f</col>
+                <col>#1c5926</col>
+                <col>#260167</col>
+            </colors>
+        </chart_1>
         <chart_2 type="chart" xml-type="chart" title="Funcionários por Função" gen-type="container" gen-group="">
             <caption/>
             <chart_type>column</chart_type>
@@ -124,31 +124,31 @@
             <value>
                 <row>
                     <col>2010</col>
-                    <col>499</col>
-                    <col>665</col>
-                    <col>378</col>
-                    <col>259</col>
+                    <col>639</col>
+                    <col>148</col>
+                    <col>132</col>
+                    <col>782</col>
                 </row>
                 <row>
                     <col>2009</col>
-                    <col>985</col>
-                    <col>79</col>
-                    <col>125</col>
-                    <col>965</col>
+                    <col>9</col>
+                    <col>433</col>
+                    <col>611</col>
+                    <col>865</col>
                 </row>
                 <row>
                     <col>2015</col>
                     <col>1010</col>
-                    <col>677</col>
-                    <col>189</col>
-                    <col>781</col>
+                    <col>792</col>
+                    <col>659</col>
+                    <col>722</col>
                 </row>
             </value>
             <colors>
-                <col>#df8b59</col>
-                <col>#e425f9</col>
-                <col>#44d8eb</col>
-                <col>#155333</col>
+                <col>#ff8396</col>
+                <col>#bbef95</col>
+                <col>#e1797d</col>
+                <col>#df8a2b</col>
             </colors>
         </chart_2>
     </content>
@@ -158,25 +158,25 @@
             <import type="dao">TEmployees</import>
         </imports>
         <xml>
-            <block type="controller" id="controller" x="88" y="38">
+            <block type="controller" id="controller" x="63" y="63">
                 <statement name="index">
-                    <block type="sttbox_statbox_1" id="VcrByM0u[rT-+;wACM@@" inline="true">
+                    <block type="sttbox_statbox_1" id="Axt!%y8#g*AebaBjM(e|" inline="true">
                         <mutation order="null" operation="null" limit="null" collectors="null" crud="null" statistdrop="get_counting" ajax="null" count="NaN"></mutation>
                         <field name="dao">TEmployees</field>
                         <field name="statistDrop">get_counting</field>
                         <statement name="value2">
-                            <block type="statfields_String::statbox_1_url" id="U!9V(xQ)^!N-iqAVGRnF">
-                                <value name="fields_model">
-                                    <block type="core_fn_link" id="!*iqr9]V.[^X3Xa.f7Br" inline="true">
-                                        <mutation count="NaN"></mutation>
-                                        <field name="value2">gestao_de_recursos_humanos</field>
-                                        <field name="value3">Lista_de_empregados</field>
-                                        <field name="value4">index</field>
-                                    </block>
-                                </value>
+                            <block type="statfields_String::statbox_1_val" id="dqfZK:m:%pvOrhm?@^2^">
+                                <field name="collectors">value</field>
                                 <next>
-                                    <block type="statfields_String::statbox_1_val" id="C-,:rJn+fF4nm%ENqx6P">
-                                        <field name="collectors">value</field>
+                                    <block type="statfields_String::statbox_1_url" id="/i=ZIY%!hS`H`oL@)TIj">
+                                        <value name="fields_model">
+                                            <block type="core_fn_link" id="TBWk+m[BXD-UODTXH8Me" inline="true">
+                                                <mutation count="0"></mutation>
+                                                <field name="value2">gestao_de_recursos_humanos</field>
+                                                <field name="value3">Lista_de_empregados</field>
+                                                <field name="value4">index</field>
+                                            </block>
+                                        </value>
                                     </block>
                                 </next>
                             </block>

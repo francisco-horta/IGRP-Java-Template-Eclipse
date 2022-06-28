@@ -27,7 +27,7 @@ public class DashboardController extends Controller {
 		model.setStatbox_1_txt("Ver Funcionários");
 		model.setStatbox_1_url("http://www.example.com");
 		model.setStatbox_1_bg("cp-fresh");
-		model.setStatbox_1_icn("fa-check");
+		model.setStatbox_1_icn("fa-users");
 		DashboardView view = new DashboardView();
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
@@ -47,8 +47,8 @@ public class DashboardController extends Controller {
 	TEmployees temployeesfilter = new TEmployees().find();
 	Object value  = temployeesfilter.getCount();
 	if(Core.isNotNull(value)){
-		model.setStatbox_1_url(Core.getIGRPLink("gestao_de_recursos_humanos", "Lista_de_empregados", "index"));
-			model.setStatbox_1_val(String.valueOf(value));
+		model.setStatbox_1_val(String.valueOf(value));
+			model.setStatbox_1_url(Core.getIGRPLink("gestao_de_recursos_humanos", "Lista_de_empregados", "index"));
 	}
 	}catch ( Exception e ) {
 		e.printStackTrace();
