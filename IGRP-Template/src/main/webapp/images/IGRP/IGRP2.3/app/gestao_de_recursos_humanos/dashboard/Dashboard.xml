@@ -81,31 +81,31 @@
             <value>
                 <row>
                     <col>2010</col>
-                    <col>159</col>
-                    <col>594</col>
-                    <col>863</col>
-                    <col>697</col>
+                    <col>718</col>
+                    <col>315</col>
+                    <col>926</col>
+                    <col>537</col>
                 </row>
                 <row>
                     <col>2009</col>
-                    <col>483</col>
-                    <col>59</col>
-                    <col>794</col>
-                    <col>735</col>
+                    <col>357</col>
+                    <col>42</col>
+                    <col>477</col>
+                    <col>703</col>
                 </row>
                 <row>
                     <col>2015</col>
                     <col>1010</col>
-                    <col>45</col>
-                    <col>652</col>
-                    <col>154</col>
+                    <col>221</col>
+                    <col>282</col>
+                    <col>671</col>
                 </row>
             </value>
             <colors>
-                <col>#373fa6</col>
-                <col>#c83e2f</col>
-                <col>#1c5926</col>
-                <col>#260167</col>
+                <col>#191355</col>
+                <col>#fc9e33</col>
+                <col>#75d7ce</col>
+                <col>#e499c2</col>
             </colors>
         </chart_1>
         <chart_2 type="chart" xml-type="chart" title="Funcionários por Função" gen-type="container" gen-group="">
@@ -124,38 +124,42 @@
             <value>
                 <row>
                     <col>2010</col>
-                    <col>639</col>
-                    <col>148</col>
-                    <col>132</col>
-                    <col>782</col>
+                    <col>788</col>
+                    <col>691</col>
+                    <col>514</col>
+                    <col>188</col>
                 </row>
                 <row>
                     <col>2009</col>
-                    <col>9</col>
-                    <col>433</col>
-                    <col>611</col>
-                    <col>865</col>
+                    <col>557</col>
+                    <col>452</col>
+                    <col>636</col>
+                    <col>652</col>
                 </row>
                 <row>
                     <col>2015</col>
                     <col>1010</col>
-                    <col>792</col>
-                    <col>659</col>
-                    <col>722</col>
+                    <col>118</col>
+                    <col>968</col>
+                    <col>662</col>
                 </row>
             </value>
             <colors>
-                <col>#ff8396</col>
-                <col>#bbef95</col>
-                <col>#e1797d</col>
-                <col>#df8a2b</col>
+                <col>#b4da0d</col>
+                <col>#fc1f78</col>
+                <col>#c772ce</col>
+                <col>#0a6199</col>
             </colors>
         </chart_2>
     </content>
     <blockly>
         <imports>
+            <import type="grafico">chart_1</import>
+            <import type="grafico">chart_2</import>
             <import type="statbox">statbox_1</import>
             <import type="dao">TEmployees</import>
+            <import type="dao">TDepartments</import>
+            <import type="dao">TJobs</import>
         </imports>
         <xml>
             <block type="controller" id="controller" x="63" y="63">
@@ -164,6 +168,12 @@
                         <mutation order="null" operation="null" limit="null" collectors="null" crud="null" statistdrop="get_counting" ajax="null" count="NaN"></mutation>
                         <field name="dao">TEmployees</field>
                         <field name="statistDrop">get_counting</field>
+                        <value name="statisValue">
+                            <block type="get-dao-TEmployees" id="LmcUVh:R_cjm2QC[BpEl">
+                                <mutation hover_type="Integer_PK#::employeeId"></mutation>
+                                <field name="DAO_FIELD">Integer_PK#::employeeId</field>
+                            </block>
+                        </value>
                         <statement name="value2">
                             <block type="statfields_String::statbox_1_val" id="dqfZK:m:%pvOrhm?@^2^">
                                 <field name="collectors">value</field>
@@ -181,6 +191,132 @@
                                 </next>
                             </block>
                         </statement>
+                        <next>
+                            <block type="grafico_chart_1" id="j7H}qMl4Qg,@YeunXl_E" inline="true">
+                                <mutation order="null" operation="null" limit="null" collectors="null" crud="null" statistdrop="null" ajax="null" count="NaN"></mutation>
+                                <field name="dao">TEmployees</field>
+                                <value name="groupby">
+                                    <block type="get-dao-TEmployees" id="G]T@rU:g_X_WhK(F;T^y">
+                                        <mutation hover_type="TDepartments_FK#::departmentId"></mutation>
+                                        <field name="DAO_FIELD">TDepartments_FK#::departmentId</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-TDepartments" id="h=oa1wT[]h_R0=w~WN@k">
+                                                <mutation hover_type="String::departmentName"></mutation>
+                                                <field name="DAO_FIELD">String::departmentName</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <value name="statistics">
+                                    <block type="get-dao-TEmployees" id="LhmkLg_6={Tpf_U*DGbX">
+                                        <mutation hover_type="TDepartments_FK#::departmentId"></mutation>
+                                        <field name="DAO_FIELD">TDepartments_FK#::departmentId</field>
+                                        <value name="dao_rela">
+                                            <block type="get-dao-TDepartments" id="?[#@}v61yHw04P4Ese|4">
+                                                <mutation hover_type="String::departmentName"></mutation>
+                                                <field name="DAO_FIELD">String::departmentName</field>
+                                            </block>
+                                        </value>
+                                    </block>
+                                </value>
+                                <statement name="value2">
+                                    <block type="EixoX" id="Ii+~bVwYNm{Y0A6s6:Tu">
+                                        <value name="eixo">
+                                            <block type="get-dao-TEmployees" id="/cG2^@h:s]}2mL;y-t^H">
+                                                <mutation hover_type="TDepartments_FK#::departmentId"></mutation>
+                                                <field name="DAO_FIELD">TDepartments_FK#::departmentId</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-TDepartments" id="^7(A^DNgblbDm`T(sigv">
+                                                        <mutation hover_type="String::departmentName"></mutation>
+                                                        <field name="DAO_FIELD">String::departmentName</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <next>
+                                            <block type="EixoY_Z" id="yp82!y80#7kZh?*lvsuM">
+                                                <field name="collectors">counting</field>
+                                                <value name="eixo">
+                                                    <block type="get-dao-TEmployees" id="%.hst(9L@CI=YR1yC3Rl">
+                                                        <mutation hover_type="TDepartments_FK#::departmentId"></mutation>
+                                                        <field name="DAO_FIELD">TDepartments_FK#::departmentId</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-TDepartments" id="7DWblSh2Gz7(iN`0n2)V">
+                                                                <mutation hover_type="String::departmentName"></mutation>
+                                                                <field name="DAO_FIELD">String::departmentName</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </next>
+                                    </block>
+                                </statement>
+                                <next>
+                                    <block type="grafico_chart_2" id="e8|O][D?Ld*Eap|2TnmZ" inline="true">
+                                        <mutation order="null" operation="null" limit="null" collectors="null" crud="null" statistdrop="null" ajax="null" count="0"></mutation>
+                                        <field name="dao">TEmployees</field>
+                                        <value name="groupby">
+                                            <block type="get-dao-TEmployees" id="e6U~GXsCb#}S@*5Lu3=O">
+                                                <mutation hover_type="TJobs_FK#::jobId"></mutation>
+                                                <field name="DAO_FIELD">TJobs_FK#::jobId</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-TJobs" id="_av4AgDLjcnZJ=oI67t#">
+                                                        <mutation hover_type="String::jobTitle"></mutation>
+                                                        <field name="DAO_FIELD">String::jobTitle</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <value name="statistics">
+                                            <block type="get-dao-TEmployees" id="UiMA*FKSb@=bPh8Y;,+~">
+                                                <mutation hover_type="TJobs_FK#::jobId"></mutation>
+                                                <field name="DAO_FIELD">TJobs_FK#::jobId</field>
+                                                <value name="dao_rela">
+                                                    <block type="get-dao-TJobs" id="7@E`%h62/~PT-@Ra15Ht">
+                                                        <mutation hover_type="String::jobTitle"></mutation>
+                                                        <field name="DAO_FIELD">String::jobTitle</field>
+                                                    </block>
+                                                </value>
+                                            </block>
+                                        </value>
+                                        <statement name="value2">
+                                            <block type="EixoY" id="sX~xj62+GsB%fT)YR7)8">
+                                                <value name="eixo">
+                                                    <block type="get-dao-TEmployees" id="Z=;lcv#Px?Upj~#pxoq6">
+                                                        <mutation hover_type="TJobs_FK#::jobId"></mutation>
+                                                        <field name="DAO_FIELD">TJobs_FK#::jobId</field>
+                                                        <value name="dao_rela">
+                                                            <block type="get-dao-TJobs" id="`I@}f#y.B#O?P-rZ~bZ?">
+                                                                <mutation hover_type="String::jobTitle"></mutation>
+                                                                <field name="DAO_FIELD">String::jobTitle</field>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </value>
+                                                <next>
+                                                    <block type="EixoZ" id="Qf-7(%dczK+cs@~7)Yml">
+                                                        <field name="collectors">counting</field>
+                                                        <value name="eixo">
+                                                            <block type="get-dao-TEmployees" id="6.OX!}2LqeyH0HBk[%2s">
+                                                                <mutation hover_type="TJobs_FK#::jobId"></mutation>
+                                                                <field name="DAO_FIELD">TJobs_FK#::jobId</field>
+                                                                <value name="dao_rela">
+                                                                    <block type="get-dao-TJobs" id="tWk8H.xJ[JSUz:9@S`3E">
+                                                                        <mutation hover_type="String::jobTitle"></mutation>
+                                                                        <field name="DAO_FIELD">String::jobTitle</field>
+                                                                    </block>
+                                                                </value>
+                                                            </block>
+                                                        </value>
+                                                    </block>
+                                                </next>
+                                            </block>
+                                        </statement>
+                                    </block>
+                                </next>
+                            </block>
+                        </next>
                     </block>
                 </statement>
             </block>

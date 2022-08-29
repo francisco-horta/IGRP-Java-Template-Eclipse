@@ -106,7 +106,7 @@
 		<flyway.version>7.11.2</flyway.version>
 		<igrp.db.user>postgres</igrp.db.user>
 		<igrp.db.password>postgres</igrp.db.password>
-		<igrp.db.dsn>jdbc:postgresql://localhost:5432/igrp_db_tmp</igrp.db.dsn>
+		<igrp.db.dsn>jdbc:postgresql://localhost:5432/db_igrp_tmp</igrp.db.dsn>
 		<igrp.migration.location>classpath:nosi/core/db/migration/igrp/postgres</igrp.migration.location>
 	
 	</properties>

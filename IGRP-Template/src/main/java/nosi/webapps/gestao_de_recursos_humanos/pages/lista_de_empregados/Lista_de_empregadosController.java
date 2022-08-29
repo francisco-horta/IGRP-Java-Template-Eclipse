@@ -36,7 +36,7 @@ public class Lista_de_empregadosController extends Controller {
 		/*----#gen-example
 		  EXAMPLES COPY/PASTE:
 		  INFO: Core.query(null,... change 'null' to your db connection name, added in Application Builder.
-		model.loadTable_1(Core.query(null,"SELECT 'Ipsum lorem deserunt ipsum sed' as departamento,'Adipiscing natus dolor perspiciatis' as funcao,'Dolor magna voluptatem adipisc' as nome,'Laudantium adipiscing iste eli' as apelido,'Mollit omnis ipsum elit aperiam' as email,'28' as salario,'hidden-3230_24c4' as id "));
+		model.loadTable_1(Core.query(null,"SELECT 'Sit sed sit totam sit' as departamento,'Deserunt accusantium elit dolor ape' as funcao,'Unde ut sit sed voluptatem' as nome,'Iste consectetur lorem magna v' as apelido,'Stract aliqua natus elit omnis' as email,'19' as salario,'hidden-8f18_d21e' as id "));
 		view.departamento_id.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		view.funcao_id.setQuery(Core.query(null,"SELECT 'id' as ID,'name' as NAME "));
 		  ----#gen-example */

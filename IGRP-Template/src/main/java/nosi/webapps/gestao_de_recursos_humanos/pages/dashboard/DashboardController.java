@@ -7,11 +7,25 @@ import java.io.IOException;//
 import nosi.core.webapp.Core;//
 import nosi.core.webapp.Response;//
 /* Start-Code-Block (import) */
+import java.util.ArrayList; //block import
+import java.util.List; //block import
+import java.util.stream.Collectors; //block import
+import java.util.LongSummaryStatistics; //block import
+import nosi.webapps.gestao_de_recursos_humanos.pages.dashboard.Dashboard.Chart_1; //block import
+import java.util.Map; //block import
+import java.util.ArrayList; //block import
+import java.util.List; //block import
+import java.util.stream.Collectors; //block import
+import java.util.LongSummaryStatistics; //block import
+import nosi.webapps.gestao_de_recursos_humanos.pages.dashboard.Dashboard.Chart_2; //block import
+import java.util.Map; //block import
 import java.util.List; //block import
 import java.util.stream.Collectors; //block import
 import java.util.LongSummaryStatistics; //block import
 import java.util.Map; //block import
 import nosi.webapps.gestao_de_recursos_humanos.dao.TEmployees; //block import
+import nosi.webapps.gestao_de_recursos_humanos.dao.TDepartments; //block import
+import nosi.webapps.gestao_de_recursos_humanos.dao.TJobs; //block import
 /* End-Code-Block */
 /*----#start-code(packages_import)----*/
 
@@ -53,9 +67,47 @@ public class DashboardController extends Controller {
 	}catch ( Exception e ) {
 		e.printStackTrace();
 	}
+	
+	
+	try{
+	TEmployees temployeesfilter = new TEmployees().find();
+	List<TEmployees> temployeesList  = temployeesfilter.all();
+	Map<String, LongSummaryStatistics> value = temployeesList.stream().collect(Collectors.groupingBy(temployees -> temployees.getDepartmentId().getDepartmentName() , Collectors.summarizingLong(temployees -> Core.toLong(temployees.getDepartmentId().getDepartmentName()))));
+	if(Core.isNotNull(temployeesList)){
+		model.setChart_1(new ArrayList<>());
+		temployeesList.stream().forEach(temployees->{
+			Chart_1 c = new Chart_1();
+			c.setEixoX(temployees.getDepartmentId().getDepartmentName());
+	
+			c.setEixoY(value.get(temployees.getDepartmentId().getDepartmentName()).getCount());
+			model.getChart_1().add(c);
+		});
+	}
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
+	
+	
+	try{
+	TEmployees temployeesfilter = new TEmployees().find();
+	List<TEmployees> temployeesList  = temployeesfilter.all();
+	Map<String, LongSummaryStatistics> value = temployeesList.stream().collect(Collectors.groupingBy(temployees -> temployees.getJobId().getJobTitle() , Collectors.summarizingLong(temployees -> Core.toLong(temployees.getJobId().getJobTitle()))));
+	if(Core.isNotNull(temployeesList)){
+		model.setChart_2(new ArrayList<>());
+		temployeesList.stream().forEach(temployees->{
+			Chart_2 c = new Chart_2();
+			c.setEixoY(temployees.getJobId().getJobTitle());
+	
+			c.setEixoZ(value.get(temployees.getJobId().getJobTitle()).getCount());
+			model.getChart_2().add(c);
+		});
+	}
+	}catch ( Exception e ) {
+		e.printStackTrace();
+	}
 	/* End-Code-Block (index) */
 		/*----#start-code(index)----*/
-		view.chart_1.loadQuery(Core.query("select d.department_name, count(e.employee_id) from t_departments d "
+		/*view.chart_1.loadQuery(Core.query("select d.department_name, count(e.employee_id) from t_departments d "
 				+ "join t_employees e "
 				+ "on d.department_id = e.department_id "
 				+ "group by d.department_name "));
@@ -64,7 +116,7 @@ public class DashboardController extends Controller {
 		view.chart_2.loadQuery(Core.query("select d.job_title, count(e.employee_id) from t_jobs d "
 				+ "join t_employees e "
 				+ "on d.job_id = e.job_id "
-				+ "group by d.job_title"));
+				+ "group by d.job_title"));*/
 		/*----#end-code----*/
 		view.setModel(model);
 		return this.renderView(view);	

@@ -62,14 +62,14 @@ public class DashboardView extends View {
 		chart_1.setXaxys("Eixo de X");
 		chart_1.setYaxys("Eixo de Y");
 		chart_1.setUrl("#");
-		//ex: chart_1.addColor("#523f35").addColor("#ec88cf").addColor("#d7e74b").addColor("#57a0eb");
+		//ex: chart_1.addColor("#755ed2").addColor("#28f6e5").addColor("#e374e3").addColor("#6ce707");
 
 		chart_2.setCaption("");
 		chart_2.setChart_type("column");
 		chart_2.setXaxys("Eixo de X");
 		chart_2.setYaxys("Eixo de Y");
 		chart_2.setUrl("#");
-		//ex: chart_2.addColor("#0492d5").addColor("#8032b3").addColor("#445b4e").addColor("#ecddd8");
+		//ex: chart_2.addColor("#05b9cf").addColor("#e2b39f").addColor("#61ab8a").addColor("#fbeba4");
 
 	}
 		
